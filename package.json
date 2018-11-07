@@ -1,0 +1,23 @@
+{
+  "name": "AwesomeTodo",
+  "version": "1.0.0",
+  "description": "Group project (todo application)",
+  "main": "dom.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-15/AwesomeTodo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-15/AwesomeTodo/issues"
+  },
+  "homepage": "https://github.com/fac-15/AwesomeTodo#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}

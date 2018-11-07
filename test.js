@@ -1,7 +1,5 @@
-var test = require('tape');
-var logic = require('./logic');
+const sum = require("./logic");
 
-test('Example test', function(t) {
-  t.pass();
-  t.end();
+test("adds 1 + 2 to equal 3", () => {
+  expect(1).toBe(1);
 });

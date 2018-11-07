@@ -14,15 +14,15 @@ var todoFunctions = {
 
     return incrementCounter;
   })(),
-  
-  //cloneArrayOfObjects will create a copy of the todos array 
+
+  //cloneArrayOfObjects will create a copy of the todos array
   //changes to the new array don't affect the original
   cloneArrayOfObjects: function(todos) {
-    return todos.map(function(todo){
+    return todos.map(function(todo) {
       return JSON.parse(JSON.stringify(todo));
     });
   },
-  
+
   addTodo: function(todos, newTodo) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
@@ -45,14 +45,13 @@ var todoFunctions = {
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-  },
+  }
 };
-
 
 // Why is this if statement necessary?
 // The answer has something to do with needing to run code both in the browser and in Node.js
-// See this article for more details: 
+// See this article for more details:
 // http://www.matteoagosti.com/blog/2013/02/24/writing-javascript-modules-for-both-browser-and-node/
-if (typeof module !== 'undefined') {
+if (typeof module !== "undefined") {
   module.exports = todoFunctions;
 }
