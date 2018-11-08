@@ -16,6 +16,16 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement('li');
+    let inputValue = document.getElementById('inputText').value;
+    let span = "<span>inputValue</span>";
+
+    document.getElementById('button').addEventListener('click', function(){
+      createTodo(inputValue)});
+
+    console.log(inputValue);
+
+    //todoNode.appendChild(span);
+
     // you will need to use addEventListener
 
     // add span holding description
@@ -70,3 +80,5 @@
 
   if (container) renderState(state);
 })();
+
+
