@@ -81,18 +81,24 @@ describe("Delete tests", () => {
 describe("Mark Todo tests", () => {
   let testObject = [
     { id: -3, description: "first todo", done: false },
-    { id: -2, description: "second todo", done: false },
+    { id: -2, description: "second todo", done: true },
     { id: -1, description: "third todo", done: false }
   ];
   test("Function should not change initial input array", () => {
-    console.log(todoFunctions.markTodo(testObject, -1));
     expect(todoFunctions.markTodo(testObject, -1)).not.toBe(testObject);
   });
-  test("Done value was changed", () => {
+  test("Done value was toggled from false to true", () => {
     newTestObject = todoFunctions.markTodo(testObject, -1);
     testObject2 = newTestObject.find(function(ele) {
       return ele.id === -1;
     });
     expect(testObject2.done).toBe(true);
+  });
+  test("Done value was toggled from true to false", () => {
+    newTestObject = todoFunctions.markTodo(testObject, -2);
+    testObject2 = newTestObject.find(function(ele) {
+      return ele.id === -2;
+    });
+    expect(testObject2.done).toBe(false);
   });
 });

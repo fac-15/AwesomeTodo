@@ -52,11 +52,14 @@ var todoFunctions = {
     return filtered;
   },
   markTodo: function(todos, idToMark) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // in the new todo array, all elements will remain unchanged except the one with id: idToMark
-    // this element will have its done value toggled
-    // hint: array.map
+    //Clones the array to keep the function pure
     let todoCopy = todoFunctions.cloneArrayOfObjects(todos);
+    // finds the elements which was completed using the id
+    elementDone = todoCopy.find(function(ele) {
+      return ele.id === idToMark;
+    });
+    // toggle  'done' property on selected element
+    elementDone.done = !elementDone.done;
     return todoCopy;
   },
   sortTodos: function(todos, sortFunction) {
