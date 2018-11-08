@@ -4,21 +4,20 @@ body {
   background-color: #428ba1;
   box-sizing: border-box;
 }
-
 main {
   margin: 0 auto;
   text-align: left;
   background-color: #f8f9f9;
   padding: 20px;
-  width: 50%;
+  width: 90%;
   text-align: center;
   font-size: 1em;
   border-radius: 1em;
   margin-top: 2em;
   box-shadow: 1px 1px 1px #313332;
 }
-
 h1 {
+  font-size: 3em;
   color: #428ba1;
   text-shadow: 1px 1px 0px #313332;
 }
@@ -72,4 +71,12 @@ ul li {
   color: white;
   text-shadow: 1px 1px 0px #313332;
   box-shadow: 1px 1px 1px #313332;
+}
+@media only screen and (min-width: 700px) {
+  main {
+    width: 50%;
+  }
+  h1 {
+    font-size: 3em;
+  }
 }
