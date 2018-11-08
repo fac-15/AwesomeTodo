@@ -1,1 +1,67 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #428ba1;
+  box-sizing: border-box;
+}
 
+main {
+  margin: 0 auto;
+  text-align: left;
+  background-color: #f8f9f9;
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 1em;
+  margin-top: 2em;
+  box-shadow: 1px 1px 1px #313332;
+}
+
+h1 {
+  color: #428ba1;
+  text-shadow: 1px 1px 0px #313332;
+}
+
+button {
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.5em;
+  background-color: #cd6155;
+  height: 2em;
+  width: 2em;
+}
+
+ul {
+  text-align: left;
+}
+
+ul li {
+  list-style-type: none;
+  list-style-position: inside;
+  border: 1px solid #cacfd2;
+  margin: 1em;
+  border-radius: 0.5em;
+}
+
+#add-todo * {
+  padding: 0.6em;
+  border-radius: 0.7em;
+  width: 70%;
+}
+#add-todo {
+  padding-top: 1em;
+}
+
+#input {
+  font-size: 1.3em;
+}
+
+#submit {
+  background-color: #27ae60;
+  margin: 0.6em;
+  font-size: 1.3em;
+  color: white;
+  text-shadow: 1px 1px 0px #313332;
+  box-shadow: 1px 1px 1px #313332;
+}
