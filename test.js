@@ -50,13 +50,12 @@ describe("AddTodo tests", () => {
   });
 });
 
-let testObject = [
-  { id: -3, description: "first todo" },
-  { id: -2, description: "second todo" },
-  { id: -1, description: "third todo" }
-];
-
 describe("Delete tests", () => {
+  let testObject = [
+    { id: -3, description: "first todo" },
+    { id: -2, description: "second todo" },
+    { id: -1, description: "third todo" }
+  ];
   test("Should delete the to do with an index of -2", () => {
     expect(todoFunctions.deleteTodo(testObject, -2)).toEqual([
       { id: -3, description: "first todo" },
@@ -74,7 +73,26 @@ describe("Delete tests", () => {
     var testVar = testObject.find(function(ele) {
       return ele.id === -2;
     });
-    console.log(testVar);
     expect(testVar).toBe(undefined);
+  });
+});
+
+describe("Mark Todo tests", () => {
+  let testObject = [
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: false },
+    { id: -1, description: "third todo", done: false }
+  ];
+  test("Function should not change initial input array", () => {
+    expect(todoFunctions.markTodo(testObject, -1)).not.toEqual(testObject);
+  });
+  test("Done value was changed", () => {
+    testObject = todoFunctions.markTodo(testObject, -1);
+    console.log(testObject);
+    testObject2 = testObject.find(function(ele) {
+      return ele.id === -2;
+    });
+    console.log(testObject2);
+    expect(testObject.done).toBe(false);
   });
 });
