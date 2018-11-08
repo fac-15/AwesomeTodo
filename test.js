@@ -63,6 +63,7 @@ describe("Delete tests", () => {
     ]);
   });
 
+  //needs to be refactored since it doesn't work properly. Always returns true
   test("Original array shouldn't be changed", () => {
     expect(testObject.length).toBe(3);
   });
@@ -84,15 +85,14 @@ describe("Mark Todo tests", () => {
     { id: -1, description: "third todo", done: false }
   ];
   test("Function should not change initial input array", () => {
-    expect(todoFunctions.markTodo(testObject, -1)).not.toEqual(testObject);
+    console.log(todoFunctions.markTodo(testObject, -1));
+    expect(todoFunctions.markTodo(testObject, -1)).not.toBe(testObject);
   });
   test("Done value was changed", () => {
-    testObject = todoFunctions.markTodo(testObject, -1);
-    console.log(testObject);
-    testObject2 = testObject.find(function(ele) {
-      return ele.id === -2;
+    newTestObject = todoFunctions.markTodo(testObject, -1);
+    testObject2 = newTestObject.find(function(ele) {
+      return ele.id === -1;
     });
-    console.log(testObject2);
-    expect(testObject.done).toBe(false);
+    expect(testObject2.done).toBe(true);
   });
 });
