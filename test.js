@@ -11,7 +11,7 @@ test("GenerateId returns 1 on first run", () => {
 
 describe("Delete tests", () => {
   test("Should delete the to do with an index of -2", () => {
-    expect(todoFunctions.deleteTodo(testObject, -2)).toBe([
+    expect(todoFunctions.deleteTodo(testObject, -2)).toEqual([
       { id: -3, description: "first todo" },
       { id: -1, description: "third todo" }
     ]);
@@ -21,15 +21,13 @@ describe("Delete tests", () => {
     expect(testObject.length).toBe(3);
   });
 
-  test("correct element has been removed", () => {
+  test("Correct element has been removed", () => {
+    testObject = todoFunctions.deleteTodo(testObject, -2);
 
-    todoFunctions.deleteTodo(testObject, -2);
-     
-    var testVar = testObject.find(function(ele){
-      
+    var testVar = testObject.find(function(ele) {
       return ele.id === -2;
-    })
-    
-    expect (testVar).toBe(undefined);
-  })
+    });
+    console.log(testVar);
+    expect(testVar).toBe(undefined);
+  });
 });
