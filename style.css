@@ -1,1 +1,82 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #428ba1;
+  box-sizing: border-box;
+}
+main {
+  margin: 0 auto;
+  text-align: left;
+  background-color: #f8f9f9;
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 1em;
+  margin-top: 2em;
+  box-shadow: 1px 1px 1px #313332;
+}
+h1 {
+  font-size: 3em;
+  color: #428ba1;
+  text-shadow: 1px 1px 0px #313332;
+}
 
+button {
+  padding: 1em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  height: 3.5em;
+  width: 6em;
+  color: white;
+}
+
+.delete {
+  background-color: #cd6155;
+}
+
+.done {
+  background-color: #27ae60;
+}
+
+ul {
+  text-align: left;
+}
+
+ul li {
+  list-style-type: none;
+  list-style-position: inside;
+  border: 1px solid #cacfd2;
+  margin: 1em;
+  border-radius: 0.5em;
+}
+
+#add-todo * {
+  padding: 0.6em;
+  border-radius: 0.7em;
+  width: 70%;
+}
+#add-todo {
+  padding-top: 1em;
+}
+
+#input {
+  font-size: 1.3em;
+}
+
+#submit {
+  background-color: #27ae60;
+  margin: 0.6em;
+  font-size: 1.3em;
+  color: white;
+  text-shadow: 1px 1px 0px #313332;
+  box-shadow: 1px 1px 1px #313332;
+}
+@media only screen and (min-width: 700px) {
+  main {
+    width: 50%;
+  }
+  h1 {
+    font-size: 3em;
+  }
+}

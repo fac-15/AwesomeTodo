@@ -15,16 +15,16 @@
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
     var todoNode = document.createElement("li");
-
     var listSpan = document.createElement("span");
     todoNode.appendChild(listSpan);
     listSpan.textContent = todo.description;
-
     console.log(todoNode);
     // add span holding description
 
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
+    deleteButtonNode.classList.add("delete");
+    deleteButtonNode.innerHTML = "DEL";
     deleteButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
@@ -32,7 +32,14 @@
     todoNode.appendChild(deleteButtonNode);
 
     // add markTodo button
-
+    var markButtonNode = document.createElement("button");
+    markButtonNode.classList.add("done");
+    markButtonNode.innerHTML = "DONE";
+    markButtonNode.addEventListener("click", function(event) {
+      var newState = todoFunctions.markTodo(state, todo.id);
+      update(newState);
+    });
+    todoNode.appendChild(markButtonNode);
     // add classes for css
 
     return todoNode;
@@ -47,6 +54,11 @@
         document.querySelector(".inputText").value
       );
       console.log(newTodo);
+      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
+      // what does event.preventDefault do?
+      // what is inside event.target?
+
+      var description = "?"; // event.target ....
 
       var description = newTodo.description; // event.target ....
 
