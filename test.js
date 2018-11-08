@@ -20,4 +20,16 @@ describe("Delete tests", () => {
   test("Original array shouldn't be changed", () => {
     expect(testObject.length).toBe(3);
   });
+
+  test("correct element has been removed", () => {
+
+    todoFunctions.deleteTodo(testObject, -2);
+     
+    var testVar = testObject.find(function(ele){
+      
+      return ele.id === -2;
+    })
+    
+    expect (testVar).toBe(undefined);
+  })
 });
