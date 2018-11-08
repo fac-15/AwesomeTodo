@@ -23,6 +23,7 @@ var todoFunctions = {
     });
   },
   createTodo: function(newTodoStr) {
+    // uses input string from user to create a new todo item
     let newTodoObj = {
       id: todoFunctions.generateId(),
       description: newTodoStr,
@@ -33,22 +34,22 @@ var todoFunctions = {
   // todos is an array of object
   // newTodo is a string
   addTodo: function(todos, newTodo) {
+    //Clones the array to keep the function pure
     let todoCopy = todoFunctions.cloneArrayOfObjects(todos);
-
+    // use newTodo string to create an object
     let newTodoObj = todoFunctions.createTodo(newTodo);
-    console.log("NewtodoObj", newTodoObj);
+    // adds the new todo object to array of todos
     todoCopy.push(newTodoObj);
-    console.log("new todo", todoCopy);
     return todoCopy;
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // returns a new array, it should contain todos with the newTodo added to the end.
-    // add an id to the newTodo. You can use the generateId function to create an id.
-    // hint: array.concat
   },
   deleteTodo: function(todos, idToDelete) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // return a new array, this should not contain any todo with an id of idToDelete
-    // hint: array.filter
+    //Clones the array to keep the function pure
+    var cloneArr = todoFunctions.cloneArrayOfObjects(todos);
+    //Returns array of objects with an id different to the input to delete id
+    var filtered = cloneArr.filter(function(ele) {
+      return ele.id !== idToDelete;
+    });
+    return filtered;
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
