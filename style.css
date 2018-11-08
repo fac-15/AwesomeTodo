@@ -25,11 +25,19 @@ h1 {
 
 button {
   padding: 1em;
-  margin: 1em;
+  margin: 0.5em;
   border-radius: 0.5em;
+  height: 3.5em;
+  width: 6em;
+  color: white;
+}
+
+.delete {
   background-color: #cd6155;
-  height: 2em;
-  width: 2em;
+}
+
+.done {
+  background-color: #27ae60;
 }
 
 ul {
