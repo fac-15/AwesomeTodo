@@ -1,38 +1,51 @@
 const todoFunctions = require("./logic.js");
 
-test("adds 1 + 2 to equal 3", () => {
-  expect(1).toBe(1);
-});
+describe("AddTodo tests", () => {
+  test("Create new todo", () => {
+    const newTodo = "first todo";
+    expect(todoFunctions.createTodo(newTodo)).toEqual({
+      id: 1,
+      description: "first todo",
+      done: false
+    });
+  });
 
-test("1 will be 1", () => {
-  expect(todoFunctions.generateId()).toBe(1);
-});
+  test("Add new todo", () => {
+    const todos = [
+      { id: -3, description: "first todo" },
+      { id: -2, description: "second todo" },
+      { id: -1, description: "third todo" }
+    ];
+    const newTodo = "fourth todo";
+    expect(todoFunctions.createTodo(newTodo)).toEqual({
+      description: "fourth todo",
+      done: false,
+      id: 2
+    });
+  });
 
-test("Adding new todo", () => {
-  const todos = [1, 2, 3];
-  const newTodo = 4;
-  expect(todoFunctions.addTodo(todos, newTodo)).toEqual([1, 2, 3, 4]);
-});
+  test("Original todo doesn't change", () => {
+    const todos = [
+      { id: -3, description: "first todo" },
+      { id: -2, description: "second todo" },
+      { id: -1, description: "third todo" }
+    ];
+    const todoCopy = [
+      { id: -3, description: "first todo" },
+      { id: -2, description: "second todo" },
+      { id: -1, description: "third todo" }
+    ];
+    const newTodo = "fourth todo";
+    expect(todoFunctions.addTodo(todoCopy, newTodo)).not.toEqual(todos);
+  });
 
-test("Adding new todo", () => {
-  const todos = [
-    { id: 0, description: "zero todo", done: true },
-    { id: 1, description: "first todo", done: false },
-    { id: 2, description: "second todo", done: false }
-  ];
-  const newTodo = {
-    id: 3,
-    description: "third todo",
-    done: true
-  };
-  expect(todoFunctions.addTodo(todos, newTodo)).toEqual([
-    { id: 0, description: "zero todo", done: true },
-    { id: 1, description: "first todo", done: false },
-    { id: 2, description: "second todo", done: false },
-    {
-      id: 3,
-      description: "third todo",
-      done: true
-    }
-  ]);
+  test("Add id to newTodo", () => {
+    const newTodo = todoFunctions.createTodo("new todo");
+    expect(typeof newTodo.id).toBe("number");
+  });
+
+  test("Check the status of Done", () => {
+    const newTodo = todoFunctions.createTodo("new todo");
+    expect(newTodo.done).toBe(false);
+  });
 });

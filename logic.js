@@ -22,10 +22,23 @@ var todoFunctions = {
       return JSON.parse(JSON.stringify(todo));
     });
   },
-
+  createTodo: function(newTodoStr) {
+    let newTodoObj = {
+      id: todoFunctions.generateId(),
+      description: newTodoStr,
+      done: false
+    };
+    return newTodoObj;
+  },
+  // todos is an array of object
+  // newTodo is a string
   addTodo: function(todos, newTodo) {
     let todoCopy = todoFunctions.cloneArrayOfObjects(todos);
-    todoCopy.push(newTodo);
+
+    let newTodoObj = todoFunctions.createTodo(newTodo);
+    console.log("NewtodoObj", newTodoObj);
+    todoCopy.push(newTodoObj);
+    console.log("new todo", todoCopy);
     return todoCopy;
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
