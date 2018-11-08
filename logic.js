@@ -22,12 +22,25 @@ var todoFunctions = {
       return JSON.parse(JSON.stringify(todo));
     });
   },
-
+  createTodo: function(newTodoStr) {
+    // uses input string from user to create a new todo item
+    let newTodoObj = {
+      id: todoFunctions.generateId(),
+      description: newTodoStr,
+      done: false
+    };
+    return newTodoObj;
+  },
+  // todos is an array of object
+  // newTodo is a string
   addTodo: function(todos, newTodo) {
-    // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
-    // returns a new array, it should contain todos with the newTodo added to the end.
-    // add an id to the newTodo. You can use the generateId function to create an id.
-    // hint: array.concat
+    //Clones the array to keep the function pure
+    let todoCopy = todoFunctions.cloneArrayOfObjects(todos);
+    // use newTodo string to create an object
+    let newTodoObj = todoFunctions.createTodo(newTodo);
+    // adds the new todo object to array of todos
+    todoCopy.push(newTodoObj);
+    return todoCopy;
   },
   deleteTodo: function(todos, idToDelete) {
     //Clones the array to keep the function pure
