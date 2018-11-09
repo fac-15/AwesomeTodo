@@ -15,7 +15,7 @@ If so, please be sure to run `npm install` in order to download our dev dependen
 
 Once [Jest](https://jestjs.io/en/) is installed, tests can be run with `npm test`
 
-## 👷‍ Built With
+## 👷‍ Built with
 
 - [Jest](https://jestjs.io/en/) for testing
 - JavaScript
@@ -32,16 +32,25 @@ Once [Jest](https://jestjs.io/en/) is installed, tests can be run with `npm test
 - Work on the DOM
 - Basic styling
 
-## 🕷 Known Issues and bugs 🐛
+## 🕷 Known issues and bugs 🐛
 
 - Not particularly responsive for mobile or different sized screens
 - Mark as done button doesn't function properly
 
-## 🧘‍Stretch Goals
+## 🧘‍Stretch goals
 - Literally finishing 😂
 - Adding a function for sorting to dos
-- Proper responsiveness for different screens
-- Styling the location of buttons/text for to dos
+- Styling mobile first from the start
+- Adding error message when attempting to press submit with an empty text field
+
+## 📚 What we struggled with/what we learned 👾
+- Using ! to toggle
+  - `    elementDone.done = !elementDone.done;`
+- toBe vs toEqual in Jest, particularly in reference to arrays
+- Using describe() in testing to create sections of tests
+- Struggle with the DOM
+- Forgetting return statements in testing
+- Complexity of tests vs functions
 
 ## 👫👫 Authors
 
