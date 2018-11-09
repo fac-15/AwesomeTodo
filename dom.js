@@ -18,10 +18,7 @@
     var listSpan = document.createElement("span");
     todoNode.appendChild(listSpan);
     listSpan.textContent = todo.description;
-    console.log(todo.done);
-    var classes = todo.done ? "task-complete" : "";
     listSpan.classList = todo.done ? "task-complete" : "";
-    console.log(classes);
 
     // add span holding description
 
