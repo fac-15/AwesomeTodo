@@ -34,7 +34,14 @@ Once [Jest](https://jestjs.io/en/) is installed, tests can be run with `npm test
 
 ## 🕷 Known Issues and bugs 🐛
 
--
+- Not particularly responsive for mobile or different sized screens
+- Mark as done button doesn't function properly
+
+## 🧘‍Stretch Goals
+- Literally finishing 😂
+- Adding a function for sorting to dos
+- Proper responsiveness for different screens
+- Styling the location of buttons/text for to dos
 
 ## 👫👫 Authors
 
