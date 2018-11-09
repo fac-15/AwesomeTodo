@@ -1,19 +1,21 @@
-html,
-body {
+body,
+body * {
   font-family: "Open Sans", sans-serif;
-  background-color: #428ba1;
   box-sizing: border-box;
 }
+body {
+  background-color: #428ba1;
+}
 main {
-  margin: 0 auto;
-  text-align: left;
+  margin: 1.2em auto;
+  padding-top: 0.8em;
   background-color: #f8f9f9;
-  padding: 20px;
-  width: 90%;
   text-align: center;
+  width: 95%;
+  min-width: 500px;
+  max-width: 95%;
   font-size: 1em;
   border-radius: 1em;
-  margin-top: 2em;
   box-shadow: 1px 1px 1px #313332;
 }
 h1 {
@@ -23,32 +25,67 @@ h1 {
 }
 
 button {
-  padding: 1em;
-  margin: 0.5em;
-  border-radius: 0.5em;
+  padding: 0.1em;
+  margin: 0.1em;
+  border-radius: 0.4em;
   height: 3.5em;
-  width: 6em;
+  width: 3.5em;
   color: white;
+  font-size: 1em;
+}
+
+.done:hover {
+  background-color: #17703c;
+  transition: 0.3s;
 }
 
 .delete {
   background-color: #cd6155;
 }
 
-.done {
-  background-color: #27ae60;
+.delete:hover {
+  background: #a04b41;
+  transition: 0.3s;
 }
 
+.done {
+  padding: 0.1em;
+  margin: 0.1em;
+  border-radius: 0.4em;
+  height: 3.5em;
+  width: 3.5em;
+  color: white;
+  font-size: 1em;
+  background-color: #27ae60;
+}
+#todo-container {
+  width: 100%;
+}
+form {
+  display: block;
+  width: 100%;
+}
 ul {
+  display: block;
   text-align: left;
+  width: 100%;
+  padding: 0 0.2em;
 }
 
 ul li {
   list-style-type: none;
   list-style-position: inside;
   border: 1px solid #cacfd2;
-  margin: 1em;
   border-radius: 0.5em;
+  padding: 0.2em 0 0.2em 0.2em;
+  margin: 0.2em auto;
+}
+span {
+  font-size: 1.6em;
+  padding: 0.4em;
+  width: 70%;
+  transition: 0.3s;
+  display: inline-block;
 }
 
 #add-todo * {
@@ -63,7 +100,6 @@ ul li {
 #input {
   font-size: 1.3em;
 }
-
 #submit {
   background-color: #27ae60;
   margin: 0.6em;
@@ -72,11 +108,12 @@ ul li {
   text-shadow: 1px 1px 0px #313332;
   box-shadow: 1px 1px 1px #313332;
 }
-@media only screen and (min-width: 700px) {
+#submit:hover {
+  background-color: #17703c;
+}
+@media only screen and (min-width: 600px) {
   main {
-    width: 50%;
-  }
-  h1 {
-    font-size: 3em;
+    max-width: 30em;
+    min-width: 30em;
   }
 }
