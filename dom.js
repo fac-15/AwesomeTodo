@@ -37,7 +37,7 @@
     markButtonNode.innerHTML = "DONE";
     markButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
-      update(newState);
+      // update(newState);
     });
     todoNode.appendChild(markButtonNode);
     // add classes for css
@@ -73,9 +73,10 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
+    console.log(todoListNode);
 
     state.forEach(function(todo) {
-      todoListNode.appendChild(createTodoNode(todo));
+      todoListNode.insertBefore(createTodoNode(todo), todoListNode.firstChild);
     });
 
     // you may want to add a class for css
