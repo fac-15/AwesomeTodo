@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <title>Awesome Tasks</title>
     <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
   </head>
   <body>
     <main>
     <h1>Awesome Tasks</h1>
+    <form id="add-todo" onSubmit>
+      <textarea id="input" type="text" class="inputText" name="description" value="" placeholder="Add a new task"></textarea>
+      <input id="submit" type="submit" class="button" value="Submit" >
+
+    </form>
     <div id = "todo-container">
         <ul>
         </ul>
     </div>
 
-    <form id="add-todo" onSubmit>
-      <input id="input" type="text" class="inputText" name="description" value="" placeholder="Add a new task">
-      <input id="submit" type="submit" class="button" value="Submit" >
 
-    </form>
   </main>
   </body>
   <script type="text/javascript" src = "./logic.js"></script>
