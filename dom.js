@@ -78,7 +78,6 @@
   // you do not need to change this function
   var renderState = function(state) {
     var todoListNode = document.createElement("ul");
-    console.log(todoListNode);
 
     state.forEach(function(todo) {
       todoListNode.insertBefore(createTodoNode(todo), todoListNode.firstChild);
