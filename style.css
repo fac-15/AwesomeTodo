@@ -111,6 +111,9 @@ span {
 #submit:hover {
   background-color: #17703c;
 }
+.task-complete {
+  text-decoration: line-through;
+}
 @media only screen and (min-width: 600px) {
   main {
     max-width: 30em;

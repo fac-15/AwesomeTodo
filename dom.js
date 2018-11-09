@@ -7,9 +7,9 @@
   var addTodoForm = document.getElementById("add-todo");
 
   var state = [
-    { id: -3, description: "first todo" },
-    { id: -2, description: "second todo" },
-    { id: -1, description: "third todo" }
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: false },
+    { id: -1, description: "third todo", done: false }
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -18,6 +18,10 @@
     var listSpan = document.createElement("span");
     todoNode.appendChild(listSpan);
     listSpan.textContent = todo.description;
+    console.log(todo.done);
+    var classes = todo.done ? "task-complete" : "";
+    listSpan.classList = todo.done ? "task-complete" : "";
+    console.log(classes);
 
     // add span holding description
 
@@ -37,7 +41,7 @@
     markButtonNode.innerHTML = "DONE";
     markButtonNode.addEventListener("click", function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
-      // update(newState);
+      update(newState);
     });
     todoNode.appendChild(markButtonNode);
     // add classes for css
@@ -52,25 +56,19 @@
 
       var newTodoStr = document.querySelector(".inputText").value;
 
-      if (newTodoStr !== ""){
+      if (newTodoStr !== "") {
+        let newTodo = todoFunctions.createTodo(
+          document.querySelector(".inputText").value
+        );
 
-      let newTodo = todoFunctions.createTodo(
-        document.querySelector(".inputText").value
-      );
+        var description = newTodo.description; // event.target ....
+        document.querySelector(".inputText").value = "";
 
+        // hint: todoFunctions.addTodo
+        var newState = todoFunctions.addTodo(state, description); // ?? change this!
 
-      var description = newTodo.description; // event.target ....
-      document.querySelector(".inputText").value = "";
-
-      
-
-      // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, description); // ?? change this!
-
-      update(newState);
-
+        update(newState);
       }
-
     });
   }
 
@@ -95,5 +93,3 @@
 
   if (container) renderState(state);
 })();
-
-
