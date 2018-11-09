@@ -56,7 +56,7 @@ describe("Delete tests", () => {
     { id: -2, description: "second todo" },
     { id: -1, description: "third todo" }
   ];
-  test("Should delete the to do with an index of -2", () => {
+  test("Should delete the to do with an ID of -2", () => {
     expect(todoFunctions.deleteTodo(testObject, -2)).toEqual([
       { id: -3, description: "first todo" },
       { id: -1, description: "third todo" }
@@ -71,8 +71,8 @@ describe("Delete tests", () => {
   test("Correct element has been removed", () => {
     testObject = todoFunctions.deleteTodo(testObject, -2);
 
-    var testVar = testObject.find(function(ele) {
-      return ele.id === -2;
+    var testVar = testObject.find(function(el) {
+      return el.id === -2;
     });
     expect(testVar).toBe(undefined);
   });
@@ -89,16 +89,21 @@ describe("Mark Todo tests", () => {
   });
   test("Done value was toggled from false to true", () => {
     newTestObject = todoFunctions.markTodo(testObject, -1);
-    testObject2 = newTestObject.find(function(ele) {
-      return ele.id === -1;
+    testObject2 = newTestObject.find(function(el) {
+      return el.id === -1;
     });
     expect(testObject2.done).toBe(true);
   });
   test("Done value was toggled from true to false", () => {
     newTestObject = todoFunctions.markTodo(testObject, -2);
-    testObject2 = newTestObject.find(function(ele) {
-      return ele.id === -2;
+    testObject2 = newTestObject.find(function(el) {
+      return el.id === -2;
     });
     expect(testObject2.done).toBe(false);
   });
+});
+
+test("Test to see if generateId function creates a ID", () => {
+  let testID = todoFunctions.generateId();
+  expect(typeof testID).toBe("number");
 });

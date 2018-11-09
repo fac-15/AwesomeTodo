@@ -18,7 +18,7 @@
     var listSpan = document.createElement("span");
     todoNode.appendChild(listSpan);
     listSpan.textContent = todo.description;
-    console.log(todoNode);
+
     // add span holding description
 
     // this adds the delete button
@@ -53,14 +53,10 @@
       let newTodo = todoFunctions.createTodo(
         document.querySelector(".inputText").value
       );
-      console.log(newTodo);
-      // https://developer.mozilla.org/en-US/docs/Web/Events/submit
-      // what does event.preventDefault do?
-      // what is inside event.target?
 
       var description = newTodo.description; // event.target ....
       document.querySelector(".inputText").value = "";
-      console.log(description);
+
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, description); // ?? change this!
 
