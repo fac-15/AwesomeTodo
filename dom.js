@@ -50,17 +50,28 @@
     addTodoForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
+      var newTodoStr = document.querySelector(".inputText").value;
+
+      if (newTodoStr !== ""){
+
       let newTodo = todoFunctions.createTodo(
         document.querySelector(".inputText").value
       );
 
+
+
       var description = newTodo.description; // event.target ....
       document.querySelector(".inputText").value = "";
+
+      
 
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, description); // ?? change this!
 
       update(newState);
+
+      }
+
     });
   }
 
@@ -84,3 +95,5 @@
 
   if (container) renderState(state);
 })();
+
+
