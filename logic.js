@@ -46,8 +46,8 @@ var todoFunctions = {
     //Clones the array to keep the function pure
     var cloneArr = todoFunctions.cloneArrayOfObjects(todos);
     //Returns array of objects with an id different to the input to delete id
-    var filtered = cloneArr.filter(function(ele) {
-      return ele.id !== idToDelete;
+    var filtered = cloneArr.filter(function(el) {
+      return el.id !== idToDelete;
     });
     return filtered;
   },
@@ -55,8 +55,8 @@ var todoFunctions = {
     //Clones the array to keep the function pure
     let todoCopy = todoFunctions.cloneArrayOfObjects(todos);
     // finds the elements which was completed using the id
-    elementDone = todoCopy.find(function(ele) {
-      return ele.id === idToMark;
+    elementDone = todoCopy.find(function(el) {
+      return el.id === idToMark;
     });
     // toggle  'done' property on selected element
     elementDone.done = !elementDone.done;
