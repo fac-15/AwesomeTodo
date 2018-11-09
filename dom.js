@@ -58,10 +58,8 @@
       // what does event.preventDefault do?
       // what is inside event.target?
 
-      var description = "?"; // event.target ....
-
       var description = newTodo.description; // event.target ....
-
+      document.querySelector(".inputText").value = "";
       console.log(description);
       // hint: todoFunctions.addTodo
       var newState = todoFunctions.addTodo(state, description); // ?? change this!
