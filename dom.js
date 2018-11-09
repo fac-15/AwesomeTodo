@@ -54,7 +54,7 @@
         document.querySelector(".inputText").value
       );
 
-      var description = newTodo.description; // event.target ....
+      let description = newTodo.description; // event.target ....
       document.querySelector(".inputText").value = "";
 
       // hint: todoFunctions.addTodo
